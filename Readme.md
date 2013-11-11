@@ -1,5 +1,8 @@
 # Time Interval to Human Readable Time Interval PHP Class
 
+| Build |
+|:------|
+| [![Build Status](https://travis-ci.org/mgufrone/date-interval.png?branch=master)](https://travis-ci.org/mgufrone/date-interval) |
 To use this class you just simply add this class via composer
 
 	{
