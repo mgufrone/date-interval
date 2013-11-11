@@ -1,0 +1,17 @@
+{
+    "name": "gufron/date-interval",
+    "description": "Class for counting date interval to human readable interval",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Mochamad Gufron",
+            "email": "mgufronefendi@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0":{
+            "Gufy\\":"src"
+        }
+    }
+}
