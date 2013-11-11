@@ -3,7 +3,11 @@
 To use this class you just simply add this class via composer
 
 	{
-		"require":{"gufy/date-interval":"dev-master"}
+		"require":{
+			...
+			"gufy/date-interval":"dev-master"
+			...
+		}
 	}
 
 # Usage
