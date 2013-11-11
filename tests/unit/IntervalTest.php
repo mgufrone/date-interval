@@ -82,8 +82,8 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 	public function testIntervalUsingDate()
 	{
 		$firstDate = new \DateTime();
-		$lastDate = new \DateTime('+4 hour +6 minute');
-		$interval = strtotime($firstDate->format('Y-m-d H:i:s')-strtotime($lastDate->format('Y-m-d H:i:s')));
+		$lastDate = new \DateTime('+4 hours');
+		$interval = gmdate($lastDate->format('Y-m-d H:i:s'))-gmdate($firstDate->format('Y-m-d H:i:s'));
 		$class = new DateInterval($firstDate, $lastDate);
 		$format = "{hours} hours {minutes} minutes {seconds} seconds";
 		$actual = $class->format($format);
