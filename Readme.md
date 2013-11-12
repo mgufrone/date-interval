@@ -40,6 +40,8 @@ Let's have fun. Here is the sample code
 	// if you want format it just use this thing
 	$format = "{hours} hours {minutes} minutes {seconds} seconds";
 	$class->format($format);
+	
+	
 
 # Next Feature
 	- Add date capability, currently only time that can cover by this class
