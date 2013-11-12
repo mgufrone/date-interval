@@ -1,5 +1,5 @@
 {
-    "name": "gufron/date-interval",
+    "name": "gufy/date-interval",
     "description": "Class for counting date interval to human readable interval",
     "license": "GPLv3",
     "authors": [
