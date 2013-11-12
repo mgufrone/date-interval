@@ -24,6 +24,9 @@ Let's have fun. Here is the sample code
 	$interval = 14400; // note that the interval is in miliseconds
 	$class = new \Gufy\DateInterval($interval);
 
+	// or you can manually set the interval using this
+	$class->setInterval($interval);
+
 	// get the seconds 
 	$class->getSeconds();
 
@@ -40,8 +43,6 @@ Let's have fun. Here is the sample code
 	// if you want format it just use this thing
 	$format = "{hours} hours {minutes} minutes {seconds} seconds";
 	$class->format($format);
-	
-	
 
 # Next Feature
 	- Add date capability, currently only time that can cover by this class
