@@ -127,10 +127,10 @@ class DateInterval
 			if($hours<=0)
 				$format['{hours}'] = '';
 
-			$format['seconds'] = strtr($format['{seconds}'],array('{seconds}'=>$seconds));
-			$format['minutes'] = strtr($format['{minutes}'],array('{minutes}'=>$minutes));
-			$format['hours'] = strtr($format['{hours}'],array('{hours}'=>$hours));
-			$result = strtr($format['template'], $format);
+			$format['{seconds}'] = strtr($format['{seconds}'],array('{seconds}'=>$seconds));
+			$format['{minutes}'] = strtr($format['{minutes}'],array('{minutes}'=>$minutes));
+			$format['{hours}'] = strtr($format['{hours}'],array('{hours}'=>$hours));
+			$result = trim(strtr($format['template'], $format));
 		}
 
 		return $result;
