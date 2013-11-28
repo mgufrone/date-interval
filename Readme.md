@@ -44,11 +44,21 @@ Let's have fun. Here is the sample code
 	$format = "{hours} hours {minutes} minutes {seconds} seconds";
 	$class->format($format);
 
+	// above will print out every thing, even hours or minutes or seconds is zero (0).
+	// if you want to ignore that, you can do this thing
+
+	$format = array(
+		'template'=>'{hours} {minutes} {seconds}',
+		'{hours}'=>'{hours} hours',
+		'{minutes}'=>'{minutes} minutes',
+		'{seconds}'=>'{seconds} seconds'
+	);
+
 # Next Feature
 	- Add date capability, currently only time that can cover by this class
 	- Add more lexer on format
 
 # Support
-If you want something wrong or messy thing, you can report it by send an issue on this repo or email me at `mgufronefendi@gmail.com`. And contribution are welcome. First fork this repo and make it suitable with your need then send a pull request to this repo. 
+If you have something wrong or messy thing, you can report it by send an issue on this repo or email me at `mgufronefendi@gmail.com`. And contribution are welcome. First fork this repo and make it suitable with your need then send a pull request to this repo. 
 
 Thanks
