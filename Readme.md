@@ -53,6 +53,7 @@ Let's have fun. Here is the sample code
 		'{minutes}'=>'{minutes} minutes',
 		'{seconds}'=>'{seconds} seconds'
 	);
+	$class->format($format);
 
 # Next Feature
 	- Add date capability, currently only time that can cover by this class
