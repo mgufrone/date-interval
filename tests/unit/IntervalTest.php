@@ -79,6 +79,27 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 		));
 		$this->assertEquals($result, $actual);
 	}
+
+	public function testFormattingWithArrayOptions()
+	{
+		$interval = 14400;
+		$class = new DateInterval($interval);
+		$format = array(
+			'template'=>'{hours} {minutes} {seconds}',
+			'hours'=>'{hours} hours',
+			'minutes'=>'{minutes} minutes',
+			'seconds'=>'{seconds} seconds',
+		);
+		$actual = $class->format($format);
+		$hours = floor($interval/(1000*60*60));
+		$left = $interval%(1000*60*60);
+		$minutes = floor($left/(1000*60));
+		$left = $interval%(1000*60);
+		$seconds = floor($left/(1000));
+		$result = '4 hours';
+		$this->assertEquals($result, $actual);
+	}
+
 	public function testIntervalUsingDate()
 	{
 		$firstDate = new \DateTime();

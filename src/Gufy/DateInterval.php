@@ -99,7 +99,7 @@ class DateInterval
 	* @param string $format rounding method after we reveal the readable interval. You can use PHP_ROUND_HALF_UP and PHP_ROUND_HALF_DOWN
 	* @return well formatted output
 	*/
-	public function format($format)
+	public function format($format=array())
 	{
 		$this->tempInterval = $this->interval;
 		$hours = $this->getHours(PHP_ROUND_HALF_DOWN);
@@ -111,11 +111,28 @@ class DateInterval
 		$seconds = $this->getSeconds(PHP_ROUND_HALF_DOWN);
 
 		$this->interval = $this->tempInterval;
+		if(is_string($format))
 		$result = strtr($format, array(
 			'{hours}'=>$hours,
 			'{minutes}'=>$minutes,
 			'{seconds}'=>$seconds,
 		));
+		else
+		{
+			$template = $format['template'];
+			if($seconds<=0)
+				$format['seconds'] = '';
+			if($minutes<=0)
+				$format['hours'] = '';
+			if($hours<=0)
+				$format['minutes'] = '';
+
+			$format['seconds'] = strtr($format['seconds'],array('{seconds}'=>$seconds));
+			$format['minutes'] = strtr($format['minutes'],array('{minutes}'=>$minutes));
+			$format['hours'] = strtr($format['hours'],array('{hours}'=>$hours));
+			$result = strtr($format['template'], $format);
+		}
+
 		return $result;
 	}
 
