@@ -82,13 +82,13 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 
 	public function testFormattingWithArrayOptions()
 	{
-		$interval = 14400;
+		$interval = 14400*1000;
 		$class = new DateInterval($interval);
 		$format = array(
 			'template'=>'{hours} {minutes} {seconds}',
-			'hours'=>'{hours} hours',
-			'minutes'=>'{minutes} minutes',
-			'seconds'=>'{seconds} seconds',
+			'{hours}'=>'{hours} hours',
+			'{minutes}'=>'{minutes} minutes',
+			'{seconds}'=>'{seconds} seconds',
 		);
 		$actual = $class->format($format);
 		$hours = floor($interval/(1000*60*60));

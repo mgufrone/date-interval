@@ -121,11 +121,11 @@ class DateInterval
 		{
 			$template = $format['template'];
 			if($seconds<=0)
-				$format['seconds'] = '';
+				$format['{seconds}'] = '';
 			if($minutes<=0)
-				$format['hours'] = '';
+				$format['{minutes}'] = '';
 			if($hours<=0)
-				$format['minutes'] = '';
+				$format['{hours}'] = '';
 
 			$format['seconds'] = strtr($format['seconds'],array('{seconds}'=>$seconds));
 			$format['minutes'] = strtr($format['minutes'],array('{minutes}'=>$minutes));
